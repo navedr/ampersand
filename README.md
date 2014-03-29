@@ -47,7 +47,9 @@ just add the class 'dialog-close-btn' to your custom button and the close action
 	    <div class="top-bar-content">
 	        Content section
 	    </div>
-	    <div class="top-bar-footern">
+	    <div class="top-bar-footer">
 	        <a href="#" class="top-bar-toggle" data-hidden="Show Bar" data-visible="Hide Bar">Hide Bar</a>
 	    </div>
 	</div>
+  
+Also see `index.html` for more examples.

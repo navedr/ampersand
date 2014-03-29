@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>ampersand</title>
-    <script type="text/javascript" src="jquery/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/ampersand.min.js"></script>
+<meta charset="UTF-8">
+<title>ampersand</title>
+<script type="text/javascript" src="jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/ampersand.min.js"></script>
 </head>
 <body>
-	
+	<div class="top-bar">
+		<div class="top-bar-content ptr pbl back-bright-green">This is a
+			top bar</div>
+		<div class="top-bar-footer back-bright-green">
+			<a href="#" class="top-bar-toggle" data-hidden="Show Bar"
+				data-visible="Hide Bar">Hide Bar</a>
+		</div>
+	</div>
+	<div class="well">
+		<div class="ptop pbm"></div>
+		<div class="container-fluid">
+			<fieldset>
+				<legend>Dialogs</legend>
+				<div class="row">
+					<div class="col-md-4">
+						<a href="#"
+							onclick="Dialog.showAlert('This is a dialog alert'); return false;"
+							class="btn btn-primary">Show Dialog Alert</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#"
+							onclick="Dialog.showAlert('<span class=fontred>This is a dialog alert with red text</span>', true); return false;"
+							class="btn btn-primary">Show Dialog Alert with custom styling</a>
+					</div>
+					<div class="col-md-4">
+						<a href="#"
+							onclick="Dialog.show('Thank You for using ampersand<br>You have made the right choice', '', 300, true, 1000, true, 'Welcome to ampersand'); return false;"
+							class="btn btn-primary">Show custom dialog</a>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</div>
 </body>
 </html>
