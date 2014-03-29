@@ -31,7 +31,7 @@ If you are already using `jQuery` just add it to your page before adding ampersa
 
 Can you show me some examples?
 ------------------------------
-Why not. There you go!!
+Why not. Here you go!!
 
 #### Creating dialogs ####
 -----
