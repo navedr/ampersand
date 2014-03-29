@@ -30,6 +30,24 @@ The only other library which you will need to add before adding ampersand is `jQ
 If you are already using `jQuery` just add it to your page before adding ampersand. jQuery 1.9+ is recommended. 
 
 ### Example ###
+-----
 
 #### Creating dialogs ####
+-----
+1. To create a dialog alert on the page just use `Dialog.showAlert(message)`. 
+If you want to do custom styling in that message, change it to `Dialog.showAlert(message, true)`.
+2. To show a custom dialog use `Dialog.show(dialogHtml, cssClass, width, hasTitleBar, zIndex, hasCloseButton, dialogTitle)`.
+If you set hasCloseButton to 'true' it will add a close button at bottom center of dialog. If you want your custom dialog close button
+just add the class 'dialog-close-btn' to your custom button and the close action will be automatically assigned to it.
 
+#### Adding sticky bar on top of page ####
+-----
+##### Example #####
+`<div class="top-bar">
+    <div class="top-bar-content">
+        Content section
+    </div>
+    <div class="top-bar-footern">
+        <a href="#" class="top-bar-toggle" data-hidden="Show Bar" data-visible="Hide Bar">Hide Bar</a>
+    </div>
+</div>`
