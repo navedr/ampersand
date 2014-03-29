@@ -1,0 +1,16 @@
+﻿body {
+}
+.fancy-form input[type='text'], .fancy-form input[type='password']
+{
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;
+    width: 180px;
+}
+.fancy-form select
+{
+    width: 180px;
+    border: 1px solid #DDD;
+    padding: 5px;
+    border-radius: 3px;   
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;
+}
