@@ -29,3 +29,7 @@ Are there any prerequisites?
 The only other library which you will need to add before adding ampersand is `jQuery` but it is already included in the download. 
 If you are already using `jQuery` just add it to your page before adding ampersand. jQuery 1.9+ is recommended. 
 
+### Example ###
+
+#### Creating dialogs ####
+
