@@ -1,5 +1,4 @@
 ﻿var v = new Date().getTime();
-$.include('assets/blockUI/jquery.blockUI.js?v=' + v)
 Loader = {
     loading_open: false,
     showLoadingBox: function () {
