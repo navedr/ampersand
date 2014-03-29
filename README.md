@@ -43,11 +43,11 @@ just add the class 'dialog-close-btn' to your custom button and the close action
 #### Adding sticky bar on top of page ####
 -----
 ##### Example #####
-`<div class="top-bar">
-    <div class="top-bar-content">
-        Content section
-    </div>
-    <div class="top-bar-footern">
-        <a href="#" class="top-bar-toggle" data-hidden="Show Bar" data-visible="Hide Bar">Hide Bar</a>
-    </div>
-</div>`
+	`<div class="top-bar">
+	    <div class="top-bar-content">
+	        Content section
+	    </div>
+	    <div class="top-bar-footern">
+	        <a href="#" class="top-bar-toggle" data-hidden="Show Bar" data-visible="Hide Bar">Hide Bar</a>
+	    </div>
+	</div>`
