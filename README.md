@@ -8,11 +8,11 @@ ampersand is a javascript and css library which tries to simplify common tasks w
 What is ampersand built of?
 ---------------------------
 ampersand is built using the famous libraries out there. The libraries used in ampersand are as follows:
-jQuery
-jQuery UI
-jQuery Forms
-Intro JS
-Twitter Bootstrap
+* jQuery
+* jQuery UI
+* jQuery Forms
+* Intro JS
+* Twitter Bootstrap
 and some of ampersand's custom libraries...
 
 How do I use ampersand?
