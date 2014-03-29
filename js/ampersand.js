@@ -1,8 +1,13 @@
-var matched,browser;jQuery.uaMatch=function(ua){ua=ua.toLowerCase();var match=/(chrome)[ \/]([\w.]+)/.exec(ua)||/(webkit)[ \/]([\w.]+)/.exec(ua)||/(opera)(?:.*version|)[ \/]([\w.]+)/.exec(ua)||/(msie) ([\w.]+)/.exec(ua)||ua.indexOf("compatible")<0&&/(mozilla)(?:.*? rv:([\w.]+)|)/.exec(ua)||[];return{browser:match[1]||"",version:match[2]||"0"}};matched=jQuery.uaMatch(navigator.userAgent);browser={};if(matched.browser){browser[matched.browser]=true;browser.version=matched.version}if(browser.chrome){browser.webkit=true}else if(browser.webkit){browser.safari=true}jQuery.browser=browser;if($.browser.mozilla||$.browser.opera){document.removeEventListener("DOMContentLoaded",$.ready,false);document.addEventListener("DOMContentLoaded",function(){$.ready()},false)}$.event.remove(window,"load",$.ready);$.event.add(window,"load",function(){$.ready()});$.extend({includeStates:{},include:function(url,callback,dependency){if(typeof callback!='function'&&!dependency){dependency=callback;callback=null}url=url.replace('\n','');$.includeStates[url]=false;var script=document.createElement('script');script.type='text/javascript';script.onload=function(){$.includeStates[url]=true;if(callback)callback.call(script)};script.onreadystatechange=function(){if(this.readyState!="complete"&&this.readyState!="loaded")return;$.includeStates[url]=true;if(callback)callback.call(script)};script.src=url;if(dependency){if(dependency.constructor!=Array)dependency=[dependency];setTimeout(function(){var valid=true;$.each(dependency,function(k,v){if(!v()){valid=false;return false}});if(valid)document.getElementsByTagName('head')[0].appendChild(script);else setTimeout(arguments.callee,10)},10)}else document.getElementsByTagName('head')[0].appendChild(script);return function(){return $.includeStates[url]}},readyOld:$.ready,ready:function(){if($.isReady)return;imReady=true;$.each($.includeStates,function(url,state){if(!state)return imReady=false});if(imReady){$.readyOld.apply($,arguments)}else{setTimeout(arguments.callee,10)}}});
-var jsLibs = ['jquery/jquery.form.min.js', 'jquery-ui/js/jquery-ui.js', 'js/intro.min.js', 'bootstrap/js/bootstrap.min.js', 
-              'js/tiny-pubsub.js', 'js/underscore-min.js'];
-for(var x in jsLibs){
-	$.include(jsLibs[x]);
+function loadjscssfile(filename,filetype){if(filetype=="js"){var fileref=document.createElement('script');fileref.setAttribute("type","text/javascript");fileref.setAttribute("src",filename)}else if(filetype=="css"){var fileref=document.createElement("link");fileref.setAttribute("rel","stylesheet");fileref.setAttribute("type","text/css");fileref.setAttribute("href",filename)}if(typeof fileref!="undefined"){document.getElementsByTagName("head")[0].appendChild(fileref)}}
+var cssFiles = ['bootstrap/css/bootstrap.min.css', 'bootstrap/css/bootstrap-responsive.min.css', 'jquery-ui/css/jquery-ui.css',
+                'css/introjs.min.css', 'css/validation.css', 'css/fancy.form.css', 'css/helper.css'];
+var jsFiles = ['jquery/jquery.form.min.js', 'jquery-ui/js/jquery-ui.js', 'js/intro.min.js', 
+               'bootstrap/js/bootstrap.min.js', 'js/underscore-min.js'];
+for(var x in cssFiles){
+	loadjscssfile(cssFiles[x], 'css');
+}
+for(var x in jsFiles){
+	loadjscssfile(jsFiles[x], 'js');
 }
 //Ajax helpers
 var Ajax = {
@@ -119,7 +124,7 @@ Dialog = {
 			}
 			this.$dialog = $("<div id='" + dialogId + "'></div>");
 			if (hasCloseButton) {
-				dialogHtml += "<p><center><button class='btn danger dialog-close-btn'>Close</button></center></p>";
+				dialogHtml += "<p><center><button class='btn btn-danger dialog-close-btn'>Close</button></center></p>";
 			}
 			this.$dialog.html(dialogHtml);
 			$("body").append(this.$dialog);
@@ -141,7 +146,7 @@ Dialog = {
 				return false;
 			});
 			if (destroyOnClose) {
-				this.$dialog.live("dialogclose", function (event, ui) {
+				this.$dialog.on("dialogclose", function (event, ui) {
 					self.$dialog.remove();
 				});
 			}
@@ -173,12 +178,12 @@ Popover = {
 			});
 		},
 		bindEvents: function () {
-			$(".popover .close-popover").live("click", function (e) {
+			$(".popover .close-popover").on("click", function (e) {
 				var $btn = $(e.target);
 				$btn.parents(".popover").hide();
 				return false;
 			});
-			$(".popover-trigger").live("click", function (e) {
+			$(".popover-trigger").on("click", function (e) {
 				var $el = $(e.target);
 				if (!$el.hasClass("popover-trigger")) {
 					$el = $el.parents(".popover-trigger");
@@ -199,7 +204,7 @@ TopBar = {
 			this.bindEvents();
 		},
 		bindEvents: function () {
-			$(".top-bar .top-bar-toggle").live("click", $.proxy(this.toggleTopBar, this));
+			$(".top-bar .top-bar-toggle").on("click", $.proxy(this.toggleTopBar, this));
 		},
 		toggleTopBar: function (e) {
 			var $el = $(e.target);
@@ -230,22 +235,9 @@ TopBar = {
 
 Validation = {
 		init: function () {
-			if (jQuery.isFunction(jQuery.fn.live)) {
-				//$(".validate").live("blur", function (event) {
-				//    Validation.validateInput($(event.target));
-				//});
-				$(".validate").live("change", function (event) {
-					Validation.validateInput($(event.target));
-				});
-			}
-			else if (jQuery.isFunction(jQuery.fn.on)) {
-				//$(".validate").on("blur", function (event) {
-				//    Validation.validateInput($(event.target));
-				//});
-				$(".validate").on("change", function (event) {
-					Validation.validateInput($(event.target));
-				});
-			}
+			$(".validate").on("change", function (event) {
+				Validation.validateInput($(event.target));
+			});
 		},
 		validateInput: function (control) {
 			var val = control.val();
@@ -368,9 +360,26 @@ Validation = {
 		}
 };
 
+(function($) {
+
+	var o = $({});
+
+	$.subscribe = function() {
+		o.on.apply(o, arguments);
+	};
+
+	$.unsubscribe = function() {
+		o.off.apply(o, arguments);
+	};
+
+	$.publish = function() {
+		o.trigger.apply(o, arguments);
+	};
+
+}(jQuery));
+
 $(document).ready(function () {
 	TopBar.init();
 	Popover.init();
 	Validation.init();
 });
-
