@@ -15,7 +15,7 @@ and some of ampersand's custom libraries...
 
 How do I use ampersand?
 Just embed the following in the <head> tag of your page:
-'''ruby
+'''markup
 <script type="text/javascript" src="jquery/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/ampersand.min.js"></script>
 '''
