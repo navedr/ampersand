@@ -12,6 +12,7 @@ ampersand is built using the popular libraries out there. The libraries used in 
 * jQuery
 * jQuery UI
 * jQuery Forms
+* jQuery pubsub
 * Intro JS
 * Twitter Bootstrap
 * Underscore

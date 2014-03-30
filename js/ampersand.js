@@ -42,7 +42,7 @@ var Ajax = {
 		},
 
 		// Ajax call wrapper (jQuery)
-		callHandler: function (type, url, data, callback, isGlobal, async) {
+		callHandler: function (type, url, data, callback, isGlobal, async, errorHanlder) {
 			$.ajax({
 				type: type,
 				url: url,
@@ -50,13 +50,13 @@ var Ajax = {
 				global: isGlobal,
 				data: data,
 				success: callback,
-				error: Ajax.errorHandler,
+				error: errorHanlder ? errorHanlder :Ajax.errorHandler,
 				async: (async != null) ? async : true
 			});
 		},
 
 		// Ajax getJson wrapper (jQuery)
-		getJson: function (url, data, callback, isGlobal, async) {
+		getJson: function (url, data, callback, isGlobal, async, errorHanlder) {
 			$.ajax({
 				url: url,
 				dataType: 'json',
@@ -64,13 +64,13 @@ var Ajax = {
 				global: isGlobal,
 				data: data,
 				success: callback,
-				error: Ajax.errorHandler,
+				error: errorHanlder ? errorHanlder :Ajax.errorHandler,
 				async: async
 			});
 		},
 
 		// Ajax call wrapper with JSON response(jQuery)
-		postForJSON: function (url, data, callback, isGlobal, async) {
+		postForJSON: function (url, data, callback, isGlobal, async, errorHanlder) {
 			$.ajax({
 				type: "POST",
 				dataType: 'json',
@@ -79,7 +79,7 @@ var Ajax = {
 				global: isGlobal,
 				data: data,
 				success: callback,
-				error: Ajax.errorHandler,
+				error: errorHanlder ? errorHanlder :Ajax.errorHandler,
 				async: async
 			});
 		},
@@ -87,7 +87,7 @@ var Ajax = {
 		// Ajax error callback
 		errorHandler: function (data, textStatus, jqXHR) {
 			if (data.status != 0) {
-				window.location.href = '500.aspx?reload=' + location.pathname;
+				alert('There was error processing the request!!');
 				console.log(data);
 			}
 		},
@@ -96,7 +96,7 @@ var Ajax = {
 			$(id).ajaxForm({
 				success: success,
 				beforeSubmit: beforeSubmit,
-				error: Ajax.errorHandler
+				error: errorHanlder ? errorHanlder :Ajax.errorHandler
 			});
 		}
 };

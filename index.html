@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head lang="en">
 <meta charset="UTF-8">
@@ -29,7 +29,8 @@
 					<div class="col-md-4">
 						<a href="#"
 							onclick="Dialog.showAlert('<span class=fontred>This is a dialog alert with red text</span>', true); return false;"
-							class="btn btn-primary">Show Dialog Alert with custom styling</a>
+							class="btn btn-primary">Show Dialog Alert with custom styling
+						</a>
 					</div>
 					<div class="col-md-4">
 						<a href="#"
@@ -41,22 +42,20 @@
 			<fieldset class="mbm">
 				<legend>Templates</legend>
 				<p>To consume templates in javascript you can use the following
-					to read from template files:
+					to read from template files:</p>
 				<p>
 					<code> var template = Templates.get(url_to_template); </code>
 				</p>
-				The templating functionality caches the template when loaded first
-				time and all the subsequent calls to get the template will get it
-				from cache.
-				</p>
+				<p>The templating functionality caches the template when loaded
+					first time and all the subsequent calls to get the template will
+					get it from cache.</p>
 				<p>To fill template with data you can use underscore template
-					method:
+					method:</p>
 				<p>
 					<code> var compiled = _.template(template, vehicle); </code>
 				</p>
 				For more details refer to <a
 					href="http://underscorejs.org/#template" target="_blank">http://underscorejs.org/#template</a>
-				</p>
 			</fieldset>
 			<fieldset class="mbm">
 				<legend>Form Validation</legend>
@@ -66,6 +65,7 @@
 					class to each field you want to validate. For different kinds of
 					validations you have to add respective validation classes to the
 					fields. Validations included in this library are:
+				</p>
 				<ul>
 					<li><code>validate-required</code> - Validates that field
 						value is non-empty.</li>
@@ -88,19 +88,20 @@
 						value is under a specified maximum length. Specify maximum length
 						by <kbd>data-max-length</kbd> addribute</li>
 				</ul>
-				Validation triggers when the field loses focus. It has its
-				pre-defined set of validation error messages for each validation. If
-				you want to specify your own error message you can do it by adding
-				an attribute which is of format
-				<code>data-{validation name}-message</code>
-				. For example for required field validation you can specify as
-				<kbd>data-required-message</kbd>
-				.
+				<p>
+					Validation triggers when the field loses focus. It has its
+					pre-defined set of validation error messages for each validation.
+					If you want to specify your own error message you can do it by
+					adding an attribute which is of format
+					<code>data-{validation name}-message</code>
+					. For example for required field validation you can specify as
+					<kbd>data-required-message</kbd>
+					.
+				</p>
 				<p>If you want to validate the entire form before submitting it,
-					you can do it using:
+					you can do it using:</p>
 				<p>
 					<code>Validation.validateForm(form_id)</code>
-				</p>
 				</p>
 				<h4>Example:</h4>
 				<form class="form-horizontal" id="validation-form">
@@ -117,7 +118,8 @@
 						<div class="col-sm-10">
 							<input type="text"
 								class="form-control validate validate-digits validate-required validate-maxlength validate-minlength"
-								id="inputPassword3" data-max-length="10" data-min-length="10" data-minlength-message="Phone number has to be 10 digits"
+								id="inputPassword3" data-max-length="10" data-min-length="10"
+								data-minlength-message="Phone number has to be 10 digits"
 								data-maxlength-message="Phone number can be 10 digits"
 								placeholder="Phone Number">
 						</div>
@@ -125,11 +127,11 @@
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="button" class="btn btn-default"
-								onclick="return Validation.validateForm('validation-form');">Submit</button>
+								onclick="return Validation.validateForm('validation-form');">
+								Submit</button>
 						</div>
 					</div>
 				</form>
-				</p>
 			</fieldset>
 		</div>
 	</div>
