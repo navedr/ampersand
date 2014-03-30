@@ -52,5 +52,6 @@ just add the class 'dialog-close-btn' to your custom button and the close action
 	        <a href="#" class="top-bar-toggle" data-hidden="Show Bar" data-visible="Hide Bar">Hide Bar</a>
 	    </div>
 	</div>
-  
-Also see `index.html` for more examples.
+ 
+#### I like it. But where can I see more? ####
+See `index.html` for more examples.
