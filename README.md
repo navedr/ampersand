@@ -54,5 +54,4 @@ just add the class 'dialog-close-btn' to your custom button and the close action
 	</div>
  
 ## I like it. But where can I see more? ##
------
 See `index.html` for more examples.
