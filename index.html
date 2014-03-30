@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>ampersand by navedr</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>ampersand</h1>
+        <p>making web development simple</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/navedr/ampersand" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/navedr/ampersand/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/navedr/ampersand/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="ampersand" class="anchor" href="#ampersand"><span class="octicon octicon-link"></span></a>ampersand</h1>
+
+<h2>
+<a name="what-is-ampersand" class="anchor" href="#what-is-ampersand"><span class="octicon octicon-link"></span></a>What is ampersand?</h2>
+
+<p>ampersand is a collection of javascript and css libraries which tries to simplify common tasks while doing web development like creating dialogs, 
+fixed bars on top of window, making ajax calls, using templates by providing re-usable methods which reduce lots of coding effort.</p>
+
+<h2>
+<a name="what-is-ampersand-built-of" class="anchor" href="#what-is-ampersand-built-of"><span class="octicon octicon-link"></span></a>What is ampersand built of?</h2>
+
+<p>ampersand is built using the popular libraries out there. The libraries used in ampersand are as follows:</p>
+
+<ul>
+<li>jQuery</li>
+<li>jQuery UI</li>
+<li>jQuery Forms</li>
+<li>Intro JS</li>
+<li>Twitter Bootstrap</li>
+<li>Underscore</li>
+<li>and some custom libraries...</li>
+</ul><h2>
+<a name="how-do-i-use-ampersand" class="anchor" href="#how-do-i-use-ampersand"><span class="octicon octicon-link"></span></a>How do I use ampersand?</h2>
+
+<p>Just download this library and embed the following in the <code>&lt;head&gt;</code> tag of your page:
+    <code>&lt;script type="text/javascript" src="jquery/jquery-1.10.2.min.js"&gt;&lt;/script&gt;</code>
+    <code>&lt;script type="text/javascript" src="js/ampersand.min.js"&gt;&lt;/script&gt;</code><br>
+and thats all you will ever need.</p>
+
+<h2>
+<a name="are-there-any-prerequisites" class="anchor" href="#are-there-any-prerequisites"><span class="octicon octicon-link"></span></a>Are there any prerequisites?</h2>
+
+<p>The only other library which you will need to add before adding ampersand is <code>jQuery</code> but it is already included in the download. 
+If you are already using <code>jQuery</code> just add it to your page before adding ampersand. jQuery 1.9+ is recommended. </p>
+
+<h2>
+<a name="can-you-show-me-some-examples" class="anchor" href="#can-you-show-me-some-examples"><span class="octicon octicon-link"></span></a>Can you show me some examples?</h2>
+
+<p>Why not. Here you go!!</p>
+
+<h4>
+<a name="creating-dialogs" class="anchor" href="#creating-dialogs"><span class="octicon octicon-link"></span></a>Creating dialogs</h4>
+
+<hr><ol>
+<li>To create a dialog alert on the page just use <code>Dialog.showAlert(message)</code>. 
+If you want to do custom styling in that message, change it to <code>Dialog.showAlert(message, true)</code>.</li>
+<li>To show a custom dialog use <code>Dialog.show(dialogHtml, cssClass, width, hasTitleBar, zIndex, hasCloseButton, dialogTitle)</code>.
+If you set hasCloseButton to 'true' it will add a close button at bottom center of dialog. If you want your custom dialog close button
+just add the class 'dialog-close-btn' to your custom button and the close action will be automatically assigned to it.</li>
+</ol><h4>
+<a name="adding-sticky-bar-on-top-of-page" class="anchor" href="#adding-sticky-bar-on-top-of-page"><span class="octicon octicon-link"></span></a>Adding sticky bar on top of page</h4>
+
+<hr><h5>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h5>
+
+<pre><code>&lt;div class="top-bar"&gt;
+    &lt;div class="top-bar-content"&gt;
+        Content section
+    &lt;/div&gt;
+    &lt;div class="top-bar-footer"&gt;
+        &lt;a href="#" class="top-bar-toggle" data-hidden="Show Bar" data-visible="Hide Bar"&gt;Hide Bar&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Also see <code>index.html</code> for more examples.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/navedr">navedr</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
