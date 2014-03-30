@@ -18,7 +18,7 @@
 	<div class="well">
 		<div class="ptop pbm"></div>
 		<div class="container-fluid">
-			<fieldset>
+			<fieldset class="mbm">
 				<legend>Dialogs</legend>
 				<div class="row">
 					<div class="col-md-4">
@@ -37,6 +37,99 @@
 							class="btn btn-primary">Show custom dialog</a>
 					</div>
 				</div>
+			</fieldset>
+			<fieldset class="mbm">
+				<legend>Templates</legend>
+				<p>To consume templates in javascript you can use the following
+					to read from template files:
+				<p>
+					<code> var template = Templates.get(url_to_template); </code>
+				</p>
+				The templating functionality caches the template when loaded first
+				time and all the subsequent calls to get the template will get it
+				from cache.
+				</p>
+				<p>To fill template with data you can use underscore template
+					method:
+				<p>
+					<code> var compiled = _.template(template, vehicle); </code>
+				</p>
+				For more details refer to <a
+					href="http://underscorejs.org/#template" target="_blank">http://underscorejs.org/#template</a>
+				</p>
+			</fieldset>
+			<fieldset class="mbm">
+				<legend>Form Validation</legend>
+				<p>
+					To validate fields in a form just add
+					<code>validation</code>
+					class to each field you want to validate. For different kinds of
+					validations you have to add respective validation classes to the
+					fields. Validations included in this library are:
+				<ul>
+					<li><code>validate-required</code> - Validates that field
+						value is non-empty.</li>
+					<li><code>validate-number</code> - Validates that field value
+						is a valid number.</li>
+					<li><code>validate-money</code> or <code>validate-positive-number</code>
+						- Validates that field value is a valid number and is positive.</li>
+					<li><code>validate-email</code> - Validates that field value
+						is a valid email address.</li>
+					<li><code>validate-digits</code> - Validates that field value
+						contains only numerical digits. For e.g.: phone number etc</li>
+					<li><code>validate-compare</code> - Validates that field value
+						is matches other field value. Can be used for password comparison.
+						Specify field to compare to by <kbd>data-compare-id</kbd>
+						attribute.</li>
+					<li><code>validate-minlength</code> - Validates that field
+						value is of a specified minimum length. Specify minimum length by
+						<kbd>data-min-length</kbd> addribute</li>
+					<li><code>validate-maxlength</code> - Validates that field
+						value is under a specified maximum length. Specify maximum length
+						by <kbd>data-max-length</kbd> addribute</li>
+				</ul>
+				Validation triggers when the field loses focus. It has its
+				pre-defined set of validation error messages for each validation. If
+				you want to specify your own error message you can do it by adding
+				an attribute which is of format
+				<code>data-{validation name}-message</code>
+				. For example for required field validation you can specify as
+				<kbd>data-required-message</kbd>
+				.
+				<p>If you want to validate the entire form before submitting it,
+					you can do it using:
+				<p>
+					<code>Validation.validateForm(form_id)</code>
+				</p>
+				</p>
+				<h4>Example:</h4>
+				<form class="form-horizontal" id="validation-form">
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-10">
+							<input
+								class="form-control validate validate-email validate-required"
+								id="inputEmail3" placeholder="Email">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">Phone</label>
+						<div class="col-sm-10">
+							<input type="text"
+								class="form-control validate validate-digits validate-required validate-maxlength validate-minlength"
+								id="inputPassword3" data-max-length="10" data-min-length="10" data-minlength-message="Phone number has to be 10 digits"
+								data-maxlength-message="Phone number can be 10 digits"
+								placeholder="Phone Number">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="button" class="btn btn-default"
+								onclick="return Validation.validateForm('validation-form');">Submit</button>
+						</div>
+					</div>
+				</form>
+				</p>
 			</fieldset>
 		</div>
 	</div>
