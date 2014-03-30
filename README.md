@@ -25,7 +25,7 @@ Just download this library and embed the following in the `<head>` tag of your p
 and thats all you will ever need.
 
 Are there any prerequisites?
----------------------------------------------------
+----------------------------
 The only other library which you will need to add before adding ampersand is `jQuery` but it is already included in the download. 
 If you are already using `jQuery` just add it to your page before adding ampersand. jQuery 1.9+ is recommended. 
 
@@ -53,6 +53,6 @@ just add the class 'dialog-close-btn' to your custom button and the close action
 	    </div>
 	</div>
  
-#### I like it. But where can I see more? ####
+## I like it. But where can I see more? ##
 -----
 See `index.html` for more examples.
