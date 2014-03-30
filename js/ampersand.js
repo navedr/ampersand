@@ -92,7 +92,7 @@ var Ajax = {
 			}
 		},
 
-		ajaxForm: function (id, success, beforeSubmit) {
+		ajaxForm: function (id, success, beforeSubmit, errorHanlder) {
 			$(id).ajaxForm({
 				success: success,
 				beforeSubmit: beforeSubmit,

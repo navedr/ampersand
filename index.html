@@ -8,34 +8,54 @@
 </head>
 <body>
 	<div class="top-bar">
-		<div class="top-bar-content ptr pbl back-bright-green">This is a
-			top bar</div>
+		<div class="top-bar-content ptr pbl back-bright-green">
+			Thank you for downloading <b>ampersand</b> library. To get the latest version, please visit <a class="btn btn-danger"
+				href="http://navedr.github.io/ampersand/" target="_blank">http://navedr.github.io/ampersand/</a>
+		</div>
 		<div class="top-bar-footer back-bright-green">
-			<a href="#" class="top-bar-toggle" data-hidden="Show Bar"
-				data-visible="Hide Bar">Hide Bar</a>
+			<a href="#" class="top-bar-toggle" data-hidden="Show"
+				data-visible="Hide">Hide</a>
 		</div>
 	</div>
 	<div class="well">
+		<div class="ptop pbm"></div>
 		<div class="ptop pbm"></div>
 		<div class="container-fluid">
 			<fieldset class="mbm">
 				<legend>Dialogs</legend>
 				<div class="row">
-					<div class="col-md-4">
-						<a href="#"
-							onclick="Dialog.showAlert('This is a dialog alert'); return false;"
-							class="btn btn-primary">Show Dialog Alert</a>
+					<div class="col-md-3">
+						<p>
+							<a href="#"
+								onclick="Dialog.showAlert('This is a dialog alert'); return false;"
+								class="btn btn-primary">Show Dialog Alert</a>
+						</p>
+						<p class="alert alert-danger">Dialog.showAlert('This is a
+							dialog alert');</p>
 					</div>
 					<div class="col-md-4">
-						<a href="#"
-							onclick="Dialog.showAlert('<span class=fontred>This is a dialog alert with red text</span>', true); return false;"
-							class="btn btn-primary">Show Dialog Alert with custom styling
-						</a>
+						<p>
+							<a href="#"
+								onclick="Dialog.showAlert('<span class=fontred>This is a dialog alert with red text</span>', true); return false;"
+								class="btn btn-primary">Show Dialog Alert with custom
+								styling </a>
+						</p>
+						<p class="alert alert-danger">
+							Dialog.showAlert("&lt;span class='fontred'&gt;This is a dialog
+								alert with red text&lt;/span&gt;", true);
+						</p>
 					</div>
-					<div class="col-md-4">
-						<a href="#"
-							onclick="Dialog.show('Thank You for using ampersand<br>You have made the right choice', '', 300, true, 1000, true, 'Welcome to ampersand'); return false;"
-							class="btn btn-primary">Show custom dialog</a>
+					<div class="col-md-5">
+						<p>
+							<a href="#"
+								onclick="Dialog.show('Thank You for using ampersand<br>You have made the right choice', '', 300, true, 1000, true, 'Welcome to ampersand'); return false;"
+								class="btn btn-primary">Show custom dialog</a>
+						</p>
+						<p class="alert alert-danger">
+							Dialog.show('Thank You for using ampersand&lt;br&gt;You have made
+							the right choice', '', 300, true, 1000, true, 'Welcome to
+							ampersand');
+						</p>
 					</div>
 				</div>
 			</fieldset>
@@ -132,6 +152,70 @@
 						</div>
 					</div>
 				</form>
+			</fieldset>
+			<fieldset>
+				<legend>Ajax Calls and Ajaxified Forms</legend>
+				<h4>Ajax Calls</h4>
+				<p>We have built some helper functions on top of jQuery ajax and
+					jQuery ajax form to extract some functionalities which are commonly
+					used:</p>
+				<ul>
+					<li><code>Ajax.callHandler(type, url, data, callback,
+							isGlobal, async, errorHanlder)</code> - Generic call handler for all
+						request types(GET, POST, DELETE etc).</li>
+					<li><code>Ajax.getJson(url, data, callback, isGlobal,
+							async, errorHanlder)</code> - GET call handler for with JSON response.</li>
+					<li><code>Ajax.postForJSON(url, data, callback,
+							isGlobal, async, errorHanlder)</code> - POST call handler for with JSON
+						response.</li>
+				</ul>
+				<p>Arguments for above methods:</p>
+				<dl class="dl-horizontal">
+					<dt>type</dt>
+					<dd>(String) Request type(GET, POST, PUT, DELETE etc).</dd>
+					<dt>url</dt>
+					<dd>(String) Request URL.</dd>
+					<dt>data</dt>
+					<dd>(PlainObject or String) Data to be sent with the request.</dd>
+					<dt>callback</dt>
+					<dd>(Function) Callback method when the request is completed.</dd>
+					<dt>isGlobal</dt>
+					<dd>(Boolean) Whether to trigger global Ajax event handlers
+						for the request.</dd>
+					<dt>async</dt>
+					<dd>(Boolean) Whether the request is asynchronous or
+						synchronous.</dd>
+					<dt>errorHandler</dt>
+					<dd>(Function) Optional callback method when there is an error
+						during request.</dd>
+				</dl>
+				<p>
+					For more details on jQuery ajax refer to <a
+						href="https://api.jquery.com/jQuery.ajax/" target="_blank">https://api.jquery.com/jQuery.ajax/</a>
+				<h4>Ajaxifying Forms</h4>
+				<p>We have added one method on top of jquery ajax form to
+					simplify its usage:</p>
+				<p>
+					<code>Ajax.ajaxForm(id, success, beforeSubmit, errorHanlder)</code>
+				</p>
+				<p>Arguments for this method:</p>
+				<dl class="dl-horizontal">
+					<dt>id</dt>
+					<dd>(String) Id of the form.</dd>
+					<dt>success</dt>
+					<dd>(Function) Callback method when the form is successfully
+						submitted.</dd>
+					<dt>beforeSubmit</dt>
+					<dd>(Function) Callback method before the form is submitted.
+						Validations can be performed in this method.</dd>
+					<dt>errorHandler</dt>
+					<dd>(Function) Optional callback method when there is an error
+						during request.</dd>
+				</dl>
+				<p>
+					For more details on jQuery ajax forms refer to <a
+						href="http://malsup.com/jquery/form/#options-object"
+						target="_blank">http://malsup.com/jquery/form/#options-object</a>
 			</fieldset>
 		</div>
 	</div>
