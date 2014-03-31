@@ -54,6 +54,9 @@ just add the class 'dialog-close-btn' to your custom button and the close action
 	        <a href="#" class="top-bar-toggle" data-hidden="Show Bar" data-visible="Hide Bar">Hide Bar</a>
 	    </div>
 	</div>
+
+P.S. Since **ampersand** is built using the jQuery and other libraries listed above you can use all the functions available with those libraries directly.
+You don't have to install those libraries in your web page. **ampersand** has already done it for you!!
  
 ## I like it. But where can I see more? ##
 See `index.html` for more examples.
