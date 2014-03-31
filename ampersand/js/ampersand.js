@@ -5,10 +5,10 @@ var cssFiles = ['bootstrap/css/bootstrap.min.css', 'bootstrap/css/bootstrap-resp
 var jsFiles = ['jquery/jquery.form.min.js', 'jquery-ui/js/jquery-ui.min.js', 'js/intro.min.js', 
                'bootstrap/js/bootstrap.min.js', 'js/underscore-min.js'];
 for(var x in cssFiles){
-	loadjscssfile(cssFiles[x], 'css');
+	loadjscssfile('ampersand/' + cssFiles[x], 'css');
 }
 for(var x in jsFiles){
-	loadjscssfile(jsFiles[x], 'js');
+	loadjscssfile('ampersand/' + jsFiles[x], 'js');
 }
 //Ajax helpers
 var Ajax = {

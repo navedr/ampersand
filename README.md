@@ -22,8 +22,8 @@ ampersand is built using the popular libraries out there. The libraries used in 
 How do I use ampersand?
 -----------------------
 Just download this library and embed the following in the `<head>` tag of your page:  
-	`<script type="text/javascript" src="jquery/jquery-1.10.2.min.js"></script>`  
-	`<script type="text/javascript" src="js/ampersand.min.js"></script>`  
+	`<script type="text/javascript" src="ampersand/jquery/jquery-1.10.2.min.js"></script>`  
+	`<script type="text/javascript" src="ampersand/js/ampersand.min.js"></script>`  
 and thats all you will ever need.
 
 Are there any prerequisites?
