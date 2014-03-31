@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <title>ampersand</title>
 <script type="text/javascript" src="jquery/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/ampersand.js"></script>
+<script type="text/javascript" src="js/ampersand.min.js"></script>
 </head>
 <body>
 	<div class="top-bar">
 		<div class="top-bar-content ptr pbl back-bright-green">
-			Thank you for downloading <b>ampersand</b> library. To get the latest version, please visit <a class="btn btn-danger"
+			Thank you for downloading <b>ampersand</b> library. To get the latest
+			version, please visit <a class="btn btn-danger"
 				href="http://navedr.github.io/ampersand/" target="_blank">http://navedr.github.io/ampersand/</a>
 		</div>
 		<div class="top-bar-footer back-bright-green">
@@ -40,10 +41,9 @@
 								class="btn btn-primary">Show Dialog Alert with custom
 								styling </a>
 						</p>
-						<p class="alert alert-danger">
-							Dialog.showAlert("&lt;span class='fontred'&gt;This is a dialog
-								alert with red text&lt;/span&gt;", true);
-						</p>
+						<p class="alert alert-danger">Dialog.showAlert("&lt;span
+							class='fontred'&gt;This is a dialog alert with red
+							text&lt;/span&gt;", true);</p>
 					</div>
 					<div class="col-md-5">
 						<p>
@@ -51,11 +51,9 @@
 								onclick="Dialog.show('Thank You for using ampersand<br>You have made the right choice', '', 300, true, 1000, true, 'Welcome to ampersand'); return false;"
 								class="btn btn-primary">Show custom dialog</a>
 						</p>
-						<p class="alert alert-danger">
-							Dialog.show('Thank You for using ampersand&lt;br&gt;You have made
-							the right choice', '', 300, true, 1000, true, 'Welcome to
-							ampersand');
-						</p>
+						<p class="alert alert-danger">Dialog.show('Thank You for using
+							ampersand&lt;br&gt;You have made the right choice', '', 300,
+							true, 1000, true, 'Welcome to ampersand');</p>
 					</div>
 				</div>
 			</fieldset>
@@ -72,7 +70,8 @@
 				<p>To fill template with data you can use underscore template
 					method:</p>
 				<p>
-					<code> var compiled = _.template(template, {firstName: 'John', lastName: 'Smith'}); </code>
+					<code> var compiled = _.template(template, {firstName:
+						'John', lastName: 'Smith'}); </code>
 				</p>
 				For more details refer to <a
 					href="http://underscorejs.org/#template" target="_blank">http://underscorejs.org/#template</a>
@@ -152,11 +151,12 @@
 						</div>
 					</div>
 				</form>
+				<p>Validation has its own styling. If you want to apply your own styling, please see <code>css/validation.css</code>.</p>
 			</fieldset>
 			<fieldset class="mbm">
 				<legend>Ajax Calls and Ajaxified Forms</legend>
 				<h4>Ajax Calls</h4>
-				<p>We have built some helper functions on top of jQuery ajax and
+				<p>I have built some helper functions on top of jQuery ajax and
 					jQuery ajax form to extract some functionalities which are commonly
 					used:</p>
 				<ul>
@@ -193,7 +193,7 @@
 					For more details on jQuery ajax refer to <a
 						href="https://api.jquery.com/jQuery.ajax/" target="_blank">https://api.jquery.com/jQuery.ajax/</a>
 				<h4>Ajaxifying Forms</h4>
-				<p>We have added one method on top of jquery ajax form to
+				<p>I have added one method on top of jquery ajax form to
 					simplify its usage:</p>
 				<p>
 					<code>Ajax.ajaxForm(id, success, beforeSubmit, errorHanlder)</code>
@@ -216,6 +216,50 @@
 					For more details on jQuery ajax forms refer to <a
 						href="http://malsup.com/jquery/form/#options-object"
 						target="_blank">http://malsup.com/jquery/form/#options-object</a>
+			</fieldset>
+			<fieldset>
+				<legend>Helper CSS</legend>
+				<p>To help make web development faster, I have provided a css
+					library with commonly used styling as classes. It becomes easy to
+					use these classes for apply uniform style accross pages than
+					defining classes individually.</p>
+				<p>Youy can see css/helper.css for all these classes. Some of
+					them are:</p>
+				<dl class="dl-horizontal">
+					<dt>mbm</dt>
+					<dd>Adds 10px margin at bottom.</dd>
+					<dt>mtr</dt>
+					<dd>Adds 10px margin at top and right.</dd>
+					<dt>dblock</dt>
+					<dd>Adds display: block.</dd>
+					<dt>fontwhite</dt>
+					<dd>Sets the font color to white.</dd>
+					<dt>font-lvl-1</dt>
+					<dd>Displays font with a bigger size. Three different sizes
+						supported.</dd>
+					<dt>ptop</dt>
+					<dd>Adds 10px padding on top.</dd>
+					<dt>pull-left</dt>
+					<dd>Set float: left property.</dd>
+					<dt>clearfix</dt>
+					<dd>Creates block for a container if it has right and left
+						floating elements.</dd>
+					<dt>hide-override</dt>
+					<dd>Hides an element.</dd>
+					<dt>text-center</dt>
+					<dd>Center aligns text.</dd>
+					<dt>border-black</dt>
+					<dd>Adds 1px solid black border.</dd>
+					<dt>w25</dt>
+					<dd>Sets width to 25px. Other widths also supported.</dd>
+					<dt>back-bright-green</dt>
+					<dd>Sets the background color as bright green.</dd>
+				</dl>
+				<p>
+					Again these are few examples of what's available in the helper css.
+					For full reference see
+					<code>css/helper.css</code>.
+				</p>
 			</fieldset>
 		</div>
 	</div>

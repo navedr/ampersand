@@ -15,6 +15,7 @@ ampersand is built using the popular libraries out there. The libraries used in 
 * jQuery pubsub
 * Intro JS
 * Twitter Bootstrap
+* Font Awesome
 * Underscore
 * and some custom libraries...
 
